@@ -6,10 +6,11 @@
 - Immunity debugger
 - mona
 - VUPlayer
-- Windows 10 pro
 - Notepad ++
-- Kali linux
 - VMVirtualbox
+### OS:
+- Kali linux
+- Windows 10 pro
 
 ---
 Open python script <filename>
@@ -273,6 +274,7 @@ Log data, item 3
  Message=Bytes omitted from input: 00 01 09 0a 1a
 ```
 Hurray! We have find all badchars, now it is time to search the return address to refine our code and launch the final script with our shell code.
+
 ---
 ## The return address
 To ensure the exit of the sploitation proccess we need to find a jmp esp without ASLR and without 00, execute the next python command.
