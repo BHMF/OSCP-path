@@ -279,6 +279,7 @@ Log data, item 3
 ## Hurray! 
 
 We have found all badchars, now it is time to search the return address to refine our exploit and launch the final script with our shell code inside.
+
 ---
 ## The return address
 To ensure the exit of the exploitation process we need to find now a jmp to esp without ASLR (Address space layout randomization) and without null byte. Execute the next python command to find a breach.
@@ -371,4 +372,5 @@ file content (size 1211 bytes):
 ### That's all folks!
 
 Other things to try... write your own shell code in assembler or create a new one with Venom in kali.
+
 ---
