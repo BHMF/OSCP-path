@@ -276,7 +276,7 @@ Log data, item 3
  Address=0019E714
  Message=Bytes omitted from input: 00 01 09 0a 1a
 ```
-## Hurray! 
+## Hooray! 
 
 We have found all badchars, now it is time to search the return address to refine our exploit and launch the final script with our shell code inside.
 
