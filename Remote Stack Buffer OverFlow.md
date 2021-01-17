@@ -77,6 +77,7 @@ We open can also open netcat to lisen on port 21 on windows machine, go to your 
 nc -l -p 21
 ```
 Check if netcat service is lisening at port 21.
+
 ---
 
 Now it's time to open the vulnerable app on windows and start the kali machine to set it up as attacking machine.
@@ -171,6 +172,7 @@ nc -lvp 2021
 ## The base python script (by Master Dreg)
 
 add target ip, port number and shell script to our base python script. To achieve our malicious intentions we should make a ping of the windows machine
+
 ```sh
 $ ping 0.tcp.ngrok.io
 PING 0.tcp.ngrok.io (X.XXX.XX.XXX) 56(84) bytes of data.
