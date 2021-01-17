@@ -1,5 +1,5 @@
 # Remote Stack buffer overflow - Windows Exploiting
-## Part I - Access granted please!kali
+## Part I - Access granted please!
 ---
 ## Step by step guide
 ### Sofware:
