@@ -411,6 +411,7 @@ Time to generate now our shell code without the bad chars but frist we need to k
 0BADF00D   [+] This mona.py action took 0:00:04.189000
 ```
 1010539F is our return address
+
 ---
 ## Working with kali
 In order to stablish the remote conection run ngrok with a valid authtoken 
